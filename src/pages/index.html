@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmic Scale Explorer</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🌍 Cosmic Scale Explorer</h1>
+        <p>Discover the incredible size differences between planets!</p>
+      </header>
+
+      <div class="slider-container">
+        <label for="planetSlider">Select Planet</label>
+        <input type="range" id="planetSlider" min="1" max="8" value="1" />
+      </div>
+
+      <div class="planet-container">
+        <div id="planet1" class="planet"></div>
+        <div id="planet2" class="planet"></div>
+      </div>
+
+      <div class="info-box">
+        <div class="info-section">
+          <div>
+            <span class="info-label">Planet:</span>
+            <span id="planetName"></span>
+          </div>
+          <div>
+            <span class="info-label">Mass:</span>
+            <span id="planetMass"></span>
+          </div>
+          <div>
+            <span class="info-label">Distance from Sun:</span>
+            <span id="planetDistance"></span>
+          </div>
+        </div>
+        <div class="info-section">
+          <div>
+            <span class="info-label">Interesting Fact:</span>
+            <p id="planetFact"></p>
+          </div>
+          <div>
+            <span class="info-label">Orbital Period:</span>
+            <span id="planetOrbit"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../script/script.js"></script>
+  </body>
+</html>

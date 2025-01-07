@@ -1,0 +1,116 @@
+:root {
+  --bg-primary: #0a1128;
+  --bg-secondary: #001f54;
+  --text-primary: #fefefe;
+  --accent-color: #5ab9ea;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, var(--bg-primary), var(--bg-secondary));
+  color: var(--text-primary);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.planet-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.planet {
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  transform-style: preserve-3d;
+}
+
+.planet::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: 20%;
+  width: 15%;
+  height: 15%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.planet-label {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.slider-container {
+  width: 100%;
+  margin: 20px 0;
+}
+
+#planetSlider {
+  width: 100%;
+  accent-color: var(--accent-color);
+}
+
+.info-box {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  text-align: left;
+}
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-label {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .info-box {
+    grid-template-columns: 1fr;
+  }
+  .planet-container {
+    flex-direction: column;
+  }
+}
